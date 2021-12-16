@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
     <!-- Include all style imports -->
-    <?php include 'header.php'; ?>
+    <?php include 'includes/header.php'; ?>
     <title>ProDev</title>
 </head>
 <body class="text-center">
     <main class="form-signin">
-        <form action="login.php" method="post">
+        <form action="includes/login.php" method="post">
             <img class="mb-4" src="img/placeholder.svg" alt="Company logo">
 
             <div class="form-floating">
@@ -29,6 +29,6 @@
         </form>
     </main>
 
-    <?php include 'footer.php'; ?>
+    <?php include 'includes/footer.php'; ?>
 </body>
 </html>

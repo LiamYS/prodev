@@ -16,13 +16,16 @@ function userExists($conn, $email) {
     // Check if there is already an email in database
     if ($row = mysqli_fetch_assoc($resultData)) {
         return $row;    // Return userdata
-    }
-    else {
+    } else {
         return false;
     }
     mysqli_stmt_close($stmt);
 }
 
 function loginUser($conn, $email, $password) {
-
+    if(!userExists($conn, $email)) {
+        header("../index.php");
+    } else {
+        echo "Login succesfully!";
+    }
 }
