@@ -11,7 +11,7 @@
             <img class="mb-4" src="img/placeholder.svg" alt="Company logo">
 
             <div class="form-floating">
-                <input type="text" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">

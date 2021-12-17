@@ -7,12 +7,19 @@ if (isset($_POST['email']) && isset($_POST['password'])){
     require_once 'dbconnection.php';
     require_once 'functions.php';
 
-    echo ('Email: ' . $email . ' Password: ' . $password);
-    echo ('<br>' . json_encode(userExists($conn, $email)));
-
+    /**
+     * Log user in
+     *
+     * Check data with database, check if username and password match.
+     * Proceeds to log user in.
+     *
+     * @var $conn
+     * @var $email
+     * @var $password
+     */
     loginUser($conn, $email, $password);
 }
 else {
-    header("../index.php");
+    header("Location: ../index.php");
     exit();
 }
