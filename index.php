@@ -3,6 +3,10 @@
 <head>
     <!-- Include all style imports -->
     <?php include 'includes/header.php'; ?>
+
+    <!-- Login CSS -->
+    <link href="../css/login.css" rel="stylesheet">
+
     <title>ProDev</title>
 </head>
 <body class="text-center">

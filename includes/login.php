@@ -20,6 +20,6 @@ if (isset($_POST['email']) && isset($_POST['password'])){
     loginUser($conn, $email, $password);
 }
 else {
-    header("Location: ../index.php");
+    header("location: ../index.php");
     exit();
 }

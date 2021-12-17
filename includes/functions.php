@@ -1,5 +1,13 @@
 <?php
 
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
+
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
+
 /**
  * Checks with database if user exists
  *
@@ -43,13 +51,23 @@ function userExists($conn, $email) {
  * @return void
  */
 function loginUser($conn, $email, $password) {
-    if (!userExists($conn, $email)) {
-        header("Location: ../index.php?error=usererror");
-    } else {
-        if ($password !== userExists($conn, $email)["password"]) {
-            header("Location: ../index.php?error=wrongpw");
-        } else {
-            echo ("Login succesfull!");
-        }
+    $userExists = userExists($conn, $email);
+
+    if ($userExists === false) {
+        header("location: ../index.php?error=wronguser");
+        exit();
     }
+
+    debug_to_console("User exists");
+    $dbPassword = $userExists["password"];
+    $checkPassword = password_verify($password, $dbPassword);
+
+    // Make compatible when introducing password hashing
+    if ($dbPassword !== $password) {
+        header("location: ../index.php?error=wronglogin");
+    } else {
+        session_start();
+        header("location: ../dashboard.php");
+    }
+    exit();
 }
