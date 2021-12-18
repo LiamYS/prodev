@@ -1,6 +1,18 @@
-<!-- Bootstrap Bundle with Popper -->
-<script src="../js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<!-- Bootstrap bundle JS -->
+<script src="../js/bootstrap.bundle.min.js"></script>
 
-<script>
-    feather.replace()
-</script>
+<!-- Plugins -->
+<script src="../js/jquery.min.js"></script>
+<script src="../plugins/simplebar/js/simplebar.min.js"></script>
+<script src="../plugins/metismenu/js/metisMenu.min.js"></script>
+<script src="../plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+<script src="../plugins/vectormap/jquery-jvectormap-2.0.2.min.js"></script>
+<script src="../plugins/vectormap/jquery-jvectormap-world-mill-en.js"></script>
+<script src="../js/pace.min.js"></script>
+<script src="../plugins/chartjs/js/Chart.min.js"></script>
+<script src="../plugins/chartjs/js/Chart.extension.js"></script>
+<script src="../plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+
+<!-- App -->
+<script src="../js/app.js"></script>
+<script src="../js/index.js"></script>
