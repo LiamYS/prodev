@@ -1,5 +1,3 @@
-
-
 $(function() {
 	"use strict";
 
@@ -8,8 +6,6 @@ $(function() {
     $(function () {
         $('[data-bs-toggle="tooltip"]').tooltip();
     })
-
-
 
     $(".nav-toggle-icon").on("click", function() {
 		$(".wrapper").toggleClass("toggled")

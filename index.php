@@ -1,8 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <!-- Include all style imports -->
-    <?php include 'includes/header.php'; ?>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="Liam Vlaskamp, Pascal Vlaskamp">
+
+    <!-- Icon -->
+    <link rel="icon" href="../img/icon-placeholder.svg">
+
+    <!-- Bootstrap CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/bootstrap-extended.css" rel="stylesheet" />
 
     <!-- Login CSS -->
     <link href="../css/login.css" rel="stylesheet">
@@ -15,20 +23,15 @@
             <img class="mb-4" src="img/placeholder.svg" alt="Company logo">
 
             <div class="form-floating">
-                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="name@example.com" required>
+                <input type="email" name="email" class="form-control" id="floatingInput" placeholder="user@gmail.com" required>
                 <label for="floatingInput">Email address</label>
             </div>
             <div class="form-floating">
-                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Password" required>
+                <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="password" required>
                 <label for="floatingPassword">Password</label>
             </div>
 
-            <!--<div class="checkbox mb-3">
-                <label>
-                    <input type="checkbox" value="remember-me"> Remember me
-                </label>
-            </div>-->
-            <button class="w-100 btn btn-lg btn-dark" type="submit">Sign in</button>
+            <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign in</button>
             <p class="mt-5 mb-3 text-muted">&copy; 2021 | Powered by <a href="https://www.onlinediensten.eu">OnlineDiensten</a></p>
         </form>
     </main>
