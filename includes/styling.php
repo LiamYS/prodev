@@ -39,6 +39,6 @@
 
     <!--Theme Styles-->
     <link href="../css/dark-theme.css" rel="stylesheet" />
-    <link href="assets/css/light-theme.css" rel="stylesheet" />
-    <link href="assets/css/semi-dark.css" rel="stylesheet" />
-    <link href="assets/css/header-colors.css" rel="stylesheet" />
+    <link href="../css/light-theme.css" rel="stylesheet" />
+    <link href="../css/semi-dark.css" rel="stylesheet" />
+    <link href="../css/header-colors.css" rel="stylesheet" />

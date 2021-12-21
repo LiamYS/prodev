@@ -72,7 +72,7 @@ $(function() {
 
 
 	// switcher 
-
+	/*
 	$("#LightTheme").on("click", function() {
 		$("html").attr("class", "light-theme")
 	}),
@@ -106,12 +106,5 @@ $(function() {
 		$("html").addClass("color-header headercolor7"), $("html").removeClass("headercolor1 headercolor2 headercolor4 headercolor5 headercolor6 headercolor3 headercolor8")
 	}), $("#headercolor8").on("click", function() {
 		$("html").addClass("color-header headercolor8"), $("html").removeClass("headercolor1 headercolor2 headercolor4 headercolor5 headercolor6 headercolor7 headercolor3")
-	})
-
-
-	new PerfectScrollbar(".header-message-list")
-    new PerfectScrollbar(".header-notifications-list")
-
-
-
+	})*/
 });

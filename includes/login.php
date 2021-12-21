@@ -33,9 +33,21 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['submit'
     } else {
         session_start();
 
+        $_SESSION["id"] = $userExists["id"];
         $_SESSION["firstname"] = $userExists["firstname"];
         $_SESSION["lastname"] = $userExists["lastname"];
         $_SESSION["email"] = $userExists["email"];
+        $_SESSION["orgID"] = $userExists["orgID"];
+        $_SESSION["created"] = $userExists["created_at"];
+
+        $orgData = "SELECT id, name FROM organisations;";
+        $orgResults = mysqli_query($conn, $orgData);
+        foreach ($orgResults as $row) {
+            if ($row["id"] == $_SESSION["orgID"]) {
+                $_SESSION["orgName"] = $row["name"];
+            }
+        }
+        mysqli_close($conn);
 
         header("location: ../dashboard.php");
     }
