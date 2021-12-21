@@ -14,7 +14,7 @@ function userExists($conn, $email) {
     $sql = "SELECT * FROM users WHERE email = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("Location: ../index.php");
+        header("location: ../index.php");
         exit();
     }
 
@@ -29,36 +29,4 @@ function userExists($conn, $email) {
     } else {
         return false;
     }
-}
-
-/**
- * Log user in
- *
- * Check data with database, check if username and password match.
- * Proceeds to log user in.
- *
- * @param $conn
- * @param $email
- * @param $password
- * @return void
- */
-function loginUser($conn, $email, $password) {
-    $userExists = userExists($conn, $email);
-
-    if ($userExists === false) {
-        header("location: ../index.php?error=no_user");
-        exit();
-    }
-
-    $dbPassword = $userExists["password"];
-    $checkPassword = password_verify($password, $dbPassword);
-
-    // Make compatible when introducing password hashing
-    if ($dbPassword !== $password) {
-        header("location: ../index.php?error=wrong_password");
-    } else {
-        session_start();
-        header("location: ../dashboard.php");
-    }
-    exit();
 }

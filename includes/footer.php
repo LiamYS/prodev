@@ -12,6 +12,8 @@
 <script src="../plugins/chartjs/js/Chart.min.js"></script>
 <script src="../plugins/chartjs/js/Chart.extension.js"></script>
 <script src="../plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+<script src="../plugins/datatable/js/jquery.dataTables.min.js"></script>
+<script src="../plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
 
 <!-- App -->
 <script src="../js/app.js"></script>
