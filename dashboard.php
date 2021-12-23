@@ -26,7 +26,7 @@
                     <div class="card-body">
                         <div class="d-flex align-items-stretch justify-content-between overflow-hidden">
                             <div class="w-50">
-                                <p>Total Orders</p>
+                                <p>Create project</p>
                                 <h4 class="">8,542</h4>
                             </div>
                             <div class="w-50">

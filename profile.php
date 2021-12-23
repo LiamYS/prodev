@@ -43,9 +43,7 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Role</label>
-                                        <select class="form-select">
-                                            <option name="" value=""></option>
-                                        </select>
+                                        <input type="text" name="role" class="form-control" value="<?php echo $_SESSION["role"]; ?>" readonly>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Email Adress</label>
@@ -53,7 +51,7 @@
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Password</label>
-                                        <input type="password" name="password" class="form-control" readonly>
+                                        <input type="password" name="password" class="form-control" value="placeholder" readonly>
                                     </div>
                                 </form>
                             </div>

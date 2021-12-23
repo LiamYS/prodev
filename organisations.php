@@ -2,6 +2,13 @@
 <?php include 'includes/styling.php'; ?>
 
 <title>ProDev - Organisations</title>
+
+<?php
+    if ($_SESSION["role"] !== "superadmin") {
+        header('location: dashboard.php');
+        exit();
+    }
+?>
 </head>
 
 <body>
@@ -21,6 +28,8 @@
     <main class="page-content">
         <h6 class="mb-0 text-uppercase">Organisations</h6>
         <hr />
+        <button type="button" onclick="window.location.href='create_organisation.php'" class="btn btn-outline-primary px-3">Create organisation</button>
+        <hr />
         <div class="card">
             <div class="card-body">
                 <div class="table-responsive">
@@ -38,6 +47,7 @@
                                 echo "</th>";
                             }
                             ?>
+                            <th>Actions</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -53,6 +63,13 @@
                                     echo $data;
                                     echo '</td>';
                                 }
+                                echo '<td>';
+                                echo "<div class='btn-group'>";
+                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i></button>';
+                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i></button>';
+                                echo "</div>";
+                                echo '</td>';
+
                                 echo '</tr>';
                             }
                             mysqli_close($conn);

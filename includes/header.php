@@ -18,7 +18,7 @@
                                     <img src="img/profilepicture.png" alt="Profile picture" class="rounded-circle" width="54" height="54">
                                     <div class="ms-3">
                                         <h6 class="mb-0 dropdown-user-name"><?php echo $_SESSION["firstname"] . " " . $_SESSION["lastname"]; ?></h6>
-                                        <small class="mb-0 dropdown-user-designation text-secondary">Administrator</small>
+                                        <small class="mb-0 dropdown-user-designation text-secondary"><?php echo ucfirst($_SESSION["role"]); ?></small>
                                     </div>
                                 </div>
                             </a>

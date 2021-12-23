@@ -4,6 +4,12 @@
 <title>ProDev - Users</title>
 </head>
 
+<?php
+if ($_SESSION["role"] == "user") {
+    header('location: dashboard.php');
+}
+?>
+
 <body>
 
 
@@ -20,6 +26,8 @@
     <!--start content-->
     <main class="page-content">
         <h6 class="mb-0 text-uppercase">Users</h6>
+        <hr />
+        <button type="button" onclick="window.location.href='create_user.php'" class="btn btn-outline-primary px-3">Create user</button>
         <hr />
         <div class="card">
             <div class="card-body">
@@ -42,7 +50,11 @@
                         </thead>
                         <tbody>
                             <?php
-                            $userData = "SELECT * FROM users;";
+                            if ($_SESSION["role"] == "superadmin") {
+                                $userData = "SELECT * FROM users;";
+                            } else if ($_SESSION["role"] == "admin") {
+                                $userData = "SELECT * FROM users WHERE orgID = ". $_SESSION["orgID"] .";";
+                            }
                             $userResults = mysqli_query($conn, $userData);
 
                             foreach ($userResults as $row) {

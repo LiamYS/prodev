@@ -16,12 +16,13 @@
  * @var $stmt
  * @var $hashedPassword
  */
-if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['organisation']) && isset($_POST['email']) && isset($_POST['password']) ) {
+if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['organisation']) && isset($_POST['email']) && isset($_POST['roles']) && isset($_POST['password']) ) {
     $firstname = $_POST['firstname'];
     $lastname = $_POST['lastname'];
     $orgID = $_POST['organisation'];
     $email = $_POST['email'];
     $password = $_POST['password'];
+    $role = $_POST['roles'];
 
     require_once 'dbconnection.php';
     require_once 'functions.php';
@@ -33,17 +34,17 @@ if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['org
         exit();
     }
 
-    $sql = "INSERT INTO users (firstname, lastname, email, password, orgID) VALUES (?, ?, ?, ?, ?);";
+    $sql = "INSERT INTO users (firstname, lastname, email, password, role, orgID) VALUES (?, ?, ?, ?, ?, ?);";
     $stmt = mysqli_stmt_init($conn);
 
     if (!mysqli_stmt_prepare($stmt, $sql)) {
-        header("location: ../create_user.php");
+        header("location: ../create_user.php?error=prepare_fail");
         exit();
     }
 
     $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-    mysqli_stmt_bind_param($stmt, "sssss", $firstname, $lastname, $email, $hashedPassword, $orgID);
+    mysqli_stmt_bind_param($stmt, "ssssss", $firstname, $lastname, $email, $hashedPassword, $role, $orgID);
     mysqli_stmt_execute($stmt);
     mysqli_stmt_close($stmt);
     header("location: ../users.php");

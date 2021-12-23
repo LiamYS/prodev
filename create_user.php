@@ -55,8 +55,10 @@
                                     </div>
                                     <div class="col-4">
                                         <label class="form-label">Rights</label>
-                                        <select class="form-select">
-                                            <option name="" value=""></option>
+                                        <select name="roles" class="form-select">
+                                            <option value="superadmin">Superadmin</option>
+                                            <option value="admin">Admin</option>
+                                            <option value="user">User</option>
                                         </select>
                                     </div>
                                     <div class="col-12">

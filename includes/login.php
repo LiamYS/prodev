@@ -39,6 +39,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['submit'
         $_SESSION["email"] = $userExists["email"];
         $_SESSION["orgID"] = $userExists["orgID"];
         $_SESSION["created"] = $userExists["created_at"];
+        $_SESSION["role"] = $userExists["role"];
 
         $orgData = "SELECT id, name FROM organisations;";
         $orgResults = mysqli_query($conn, $orgData);

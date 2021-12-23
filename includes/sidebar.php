@@ -27,8 +27,6 @@
                 <div class="menu-title">Projects</div>
             </a>
             <ul>
-                <li><a href="#">Test Project 1</a></li>
-                <li><a href="#">Test Project 2</a></li>
             </ul>
         </li>
 
@@ -41,42 +39,62 @@
             </a>
         </li>
 
-        <li class="menu-label">Admin</li>
+        <?php
+        if ($_SESSION["role"] == "superadmin" || $_SESSION["role"] == "admin") {
+            echo '<li class="menu-label">Admin</li>';
+        }
+        ?>
 
-        <li>
-            <a href="../organisations.php">
-                <div class="parent-icon">
-                    <i class="bi bi-diagram-3-fill"></i>
-                </div>
-                <div class="menu-title">Organisations</div>
-            </a>
-        </li>
+        <?php
+        if ($_SESSION["role"] == "superadmin") {
+            echo '<li>';
+            echo '<a href="../organisations.php">';
+            echo '<div class="parent-icon">';
+            echo '<i class="bi bi-diagram-3-fill"></i>';
+            echo '</div>';
+            echo '<div class="menu-title">Organisation</div>';
+            echo '</a>';
+            echo '</li>';
+        }
+        ?>
 
-        <li>
+        <!--<li>
             <a href="../create_organisation.php">
                 <div class="parent-icon">
                     <i class="bi bi-diagram-2-fill"></i>
                 </div>
                 <div class="menu-title">Create organisation</div>
             </a>
-        </li>
+        </li>-->
 
-        <li>
+        <?php
+        if ($_SESSION["role"] == "superadmin" || $_SESSION["role"] == "admin") {
+            echo '<li>';
+            echo '<a href="../users.php">';
+            echo '<div class="parent-icon">';
+            echo '<i class="bi bi-people-fill"></i>';
+            echo '</div>';
+            echo '<div class="menu-title">Users</div>';
+            echo '</a>';
+            echo '</li>';
+        }
+        ?>
+        <!--<li>
             <a href="../users.php">
                 <div class="parent-icon">
                     <i class="bi bi-people-fill"></i>
                 </div>
                 <div class="menu-title">Users</div>
             </a>
-        </li>
+        </li>-->
 
-        <li>
+        <!--<li>
             <a href="../create_user.php">
                 <div class="parent-icon"><i class="bi bi-person-plus-fill"></i>
                 </div>
                 <div class="menu-title">Create account</div>
             </a>
-        </li>
+        </li>-->
     </ul>
     <!--end navigation-->
 </aside>
