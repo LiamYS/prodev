@@ -20,14 +20,12 @@
         </li>
 
         <li>
-            <a href="javascript:;" class="has-arrow">
+            <a href="projects.php">
                 <div class="parent-icon">
                     <i class="bi bi-circle-square"></i>
                 </div>
                 <div class="menu-title">Projects</div>
             </a>
-            <ul>
-            </ul>
         </li>
 
         <li>
