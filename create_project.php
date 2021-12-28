@@ -10,7 +10,7 @@
 <!--start wrapper-->
 <div class="wrapper">
     <!--start top header-->
-    <? include 'includes/header.php'; ?>
+    <?php include 'includes/header.php'; ?>
     <!--end top header-->
 
     <!--start sidebar -->
@@ -32,6 +32,10 @@
                                     <div class="col-12">
                                         <label class="form-label">Project name</label>
                                         <input type="text" name="projName" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">Lot Map</label>
+                                        <input class="form-control" type="file">
                                     </div>
                                     <div class="col-12">
                                         <div class="d-grid">

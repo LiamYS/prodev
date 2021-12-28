@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Checks with database if user exists
  *
@@ -70,17 +69,18 @@ function orgExists($conn, $name) {
  *
  * @param $conn
  * @param $name
+ * @param $id
  * @return array|false|string[]|void
  */
-function projExists($conn, $name) {
-    $sql = "SELECT * FROM projects WHERE name = ?;";
+function projExists($conn, $options) {
+    $sql = "SELECT * FROM projects WHERE name = ? OR id = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../index.php");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $name);
+    mysqli_stmt_bind_param($stmt, "ss", $options["name"], $options["id"]);
     mysqli_stmt_execute($stmt);
     // Returns data from database
     $resultData = mysqli_stmt_get_result($stmt);

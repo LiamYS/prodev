@@ -19,12 +19,11 @@
 
     <!--start content-->
     <main class="page-content">
-        <h6 class="mb-0 text-uppercase">Users</h6>
+        <h6 class="mb-0 text-uppercase">Projects</h6>
         <hr />
         <?php
         if ($_SESSION["role"] == "superadmin" || $_SESSION["role"] == "admin") {
-            $js = "windows.location.href='includes/create_proj.php'";
-            echo "<button type='button' onclick=$js class='btn btn-outline-primary px-3'>Create project</button>";
+            echo '<a href="create_project.php" class="btn btn-outline-primary px-3">Create Project</a>';
             echo '<hr />';
         }
         ?>
@@ -45,6 +44,9 @@
                                 echo "</th>";
                             }
                             ?>
+                            <th>
+                                Actions
+                            </th>
                         </tr>
                         </thead>
                         <tbody>
@@ -63,6 +65,9 @@
                                 echo $data;
                                 echo "</td>";
                             }
+                            echo "<td>";
+                            echo '<a href="project.php?project='. $row["id"] .'" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-left"></i></a>';
+                            echo "</td>";
                             echo "</tr>";
                         }
                         mysqli_close($conn);

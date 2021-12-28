@@ -56,7 +56,11 @@
                                     <div class="col-4">
                                         <label class="form-label">Rights</label>
                                         <select name="roles" class="form-select">
-                                            <option value="superadmin">Superadmin</option>
+                                            <?php
+                                            if ($_SESSION["role"] == "superadmin") {
+                                                echo '<option value="superadmin">Superadmin</option>';
+                                            }
+                                            ?>
                                             <option value="admin">Admin</option>
                                             <option value="user">User</option>
                                         </select>

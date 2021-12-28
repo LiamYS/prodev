@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(!isset($_SESSION["firstname"]) && !isset($_SESSION["lastname"]) && !isset($_SESSION["email"]) && !isset($_SESSION["password"])) {
+    if(!isset($_SESSION["firstname"]) && !isset($_SESSION["lastname"]) && !isset($_SESSION["email"])) {
         header("location: ../index.php?error=no_login");
         exit();
     }

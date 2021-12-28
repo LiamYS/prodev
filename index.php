@@ -38,7 +38,7 @@ if (isset($_SESSION["email"]) && isset($_SESSION["password"])) {
             </div>
 
             <button class="w-100 btn btn-lg btn-primary" type="submit" name="submit">Sign in</button>
-            <p class="mt-5 mb-3 text-muted">&copy; 2021 | Powered by <a href="https://www.onlinediensten.eu">OnlineDiensten</a></p>
+            <p class="mt-5 mb-3 text-muted">&copy; 2021 | Powered by <a href="https://www.onlinediensten.eu" class="text-uppercase" target="_blank ">OnlineDiensten</a></p>
         </form>
     </main>
 

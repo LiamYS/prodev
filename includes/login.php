@@ -43,6 +43,7 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['submit'
 
         $orgData = "SELECT id, name FROM organisations;";
         $orgResults = mysqli_query($conn, $orgData);
+        // Associate organisation ID of user with organisation name using organisation ID
         foreach ($orgResults as $row) {
             if ($row["id"] == $_SESSION["orgID"]) {
                 $_SESSION["orgName"] = $row["name"];

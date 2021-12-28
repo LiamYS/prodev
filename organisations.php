@@ -65,8 +65,8 @@
                                 }
                                 echo '<td>';
                                 echo "<div class='btn-group'>";
-                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-primary btn-sm"><i class="bi bi-pencil-square"></i></button>';
-                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-danger btn-sm"><i class="bi bi-trash-fill"></i></button>';
+                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-primary btn-sm edit-row"><i class="bi bi-pencil-square"></i></button>';
+                                echo '<button value="'. $row['id'] .'" type="button" class="btn btn-outline-danger btn-sm delete-row"><i class="bi bi-trash-fill"></i></button>';
                                 echo "</div>";
                                 echo '</td>';
 
