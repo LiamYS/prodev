@@ -1,0 +1,27 @@
+[
+{"type":"header","version":"5.0.1","comment":"Export to JSON plugin for PHPMyAdmin"},
+{"type":"database","name":"prodev"},
+{"type":"table","name":"organisations","database":"prodev","data":
+[
+{"id":"1","name":"Onlinediensten","created_at":"2021-12-21 17:17:30"},
+{"id":"5","name":"Acme Corporation","created_at":"2021-12-23 15:45:43"},
+{"id":"6","name":"Global Corporation","created_at":"2021-12-23 15:45:56"},
+{"id":"7","name":"Initech B.V.","created_at":"2021-12-23 15:46:13"}
+]
+}
+,{"type":"table","name":"projects","database":"prodev","data":
+[
+{"id":"4","name":"Project ZuiderZee","orgID":"1","created_at":"2021-12-27 13:46:12"},
+{"id":"5","name":"Duinrel","orgID":"6","created_at":"2021-12-27 13:47:23"},
+{"id":"6","name":"Test project","orgID":"1","created_at":"2021-12-27 13:48:27"}
+]
+}
+,{"type":"table","name":"users","database":"prodev","data":
+[
+{"id":"1","firstname":"Liam Yves","lastname":"Vlaskamp","email":"lvlaskamp@gmail.com","password":"$2y$10$H\/m0b4DP4ntLOuyNgH22V.\/YV.Dp5W2llk4IdRpduF4p.PXVALPtW","role":"superadmin","orgID":"1","created_at":"2021-12-21 09:44:19"},
+{"id":"2","firstname":"Pascal","lastname":"Vlaskamp","email":"pvlaskamp@gmail.com","password":"$2y$10$nnh9AZIzNvsp9jJWqRWBU.JYmsQza3vbdSa7Si4NEgVBkkaWxbcWK","role":"admin","orgID":"1","created_at":"2021-12-21 09:44:48"},
+{"id":"3","firstname":"Neo","lastname":"Vlaskamp","email":"nvlaskamp@gmail.com","password":"$2y$10$.zRO48\/quVPXJWGRxEaEf.\/XpnAM39LSN\/lqwULBmgbLUluzyl3g6","role":"user","orgID":"1","created_at":"2021-12-21 13:07:13"},
+{"id":"7","firstname":"Emilia","lastname":"Palmer","email":"emilia.palmer@gmail.com","password":"$2y$10$CRAtHZdHPKxi14fNKzGVYuWnfgf.9BXdK9M.ZcHSJu0aYy7pjD0xi","role":"user","orgID":"7","created_at":"2021-12-23 16:25:42"}
+]
+}
+]
