@@ -33,6 +33,7 @@ $project = projExists($conn, $options);
     <main class="page-content">
         <h6 class="mb-0 text-uppercase"><?php echo $project["name"]; ?></h6>
         <hr />
+        <img src="uploads/<?php echo $project["reference"]; ?>"
     </main>
     <!--end page main-->
 

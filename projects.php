@@ -66,8 +66,11 @@
                                 echo "</td>";
                             }
                             echo "<td>";
+                            echo "<div class='btn-group'>";
                             echo '<a href="project.php?project='. $row["id"] .'" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-left"></i></a>';
-                            echo "</td>";
+                            echo "<a data-bs-toggle='modal' data-id='". $row["id"] ."' data-bs-target='#confirmModal' class='btn btn-outline-danger btn-sm delete-project'><i class='bi bi-trash-fill'></i></a>";
+                            echo "</div>";
+                            echo"</td>";
                             echo "</tr>";
                         }
                         mysqli_close($conn);
@@ -77,6 +80,24 @@
                 </div>
             </div>
         </div>
+
+        <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">Are you sure you want to delete this project, all data will be lost and can not be recovered.</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                        <a href="" id="delete-project" class="btn btn-danger">Delete Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+
     </main>
     <!--end page main-->
 
@@ -97,6 +118,14 @@
     $(document).ready(function() {
         $('#usersTable').DataTable();
     } );
+</script>
+
+<script>
+    $(document).on("click", ".delete-project", function () {
+        var myBookId = $(this).data('id');
+        console.log(myBookId);
+        $(".modal-footer #delete-project").attr("href", "includes/delete_proj.php?project="+myBookId);
+    });
 </script>
 
 </body>

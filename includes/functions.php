@@ -84,7 +84,7 @@ function projExists($conn, $options) {
     mysqli_stmt_execute($stmt);
     // Returns data from database
     $resultData = mysqli_stmt_get_result($stmt);
-    // Check if there is already an name in database
+    // Check if there is already a name in database
     mysqli_stmt_close($stmt);
     if ($row = mysqli_fetch_assoc($resultData)) {
         return $row;    // Return userdata

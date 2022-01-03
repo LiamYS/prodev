@@ -28,14 +28,14 @@
                             <div class="border p-3 rounded">
                                 <h6 class="mb-0 text-uppercase">Create project</h6>
                                 <hr/>
-                                <form class="row g-3" action="includes/create_proj.php" method="post">
+                                <form class="row g-3" action="includes/create_proj.php" method="post" enctype="multipart/form-data">
                                     <div class="col-12">
                                         <label class="form-label">Project name</label>
                                         <input type="text" name="projName" class="form-control" required>
                                     </div>
                                     <div class="col-12">
                                         <label class="form-label">Lot Map</label>
-                                        <input class="form-control" type="file">
+                                        <input type="file" name="projLot" class="form-control" required>
                                     </div>
                                     <div class="col-12">
                                         <div class="d-grid">
