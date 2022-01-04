@@ -20,9 +20,9 @@
     <link rel="icon" href="../img/icon-placeholder.svg">
 
     <!-- Plugins -->
-    <link href="../plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>
+    <!--<link href="../plugins/vectormap/jquery-jvectormap-2.0.2.css" rel="stylesheet"/>-->
     <link href="../plugins/simplebar/css/simplebar.css" rel="stylesheet" />
-    <link href="../plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />
+    <!--<link href="../plugins/perfect-scrollbar/css/perfect-scrollbar.css" rel="stylesheet" />-->
     <link href="../plugins/metismenu/css/metisMenu.min.css" rel="stylesheet" />
     <link href="../plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" />
 
