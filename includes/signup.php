@@ -27,7 +27,10 @@ if (isset($_POST['firstname']) && isset($_POST['lastname']) && isset($_POST['org
     require_once 'dbconnection.php';
     require_once 'functions.php';
 
-    $userExists = userExists($conn, $email);
+    $options = array(
+        'email' => $email
+    );
+    $userExists = userExists($conn, $options);
 
     if ($userExists !== false) {
         header("location: ../create_user.php?error=email_taken");

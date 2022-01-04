@@ -71,12 +71,12 @@ if ($_SESSION["role"] == "user") {
 
                                 if ($_SESSION["id"] != $row["id"]) {
                                     echo "<div class='btn-group'>";
-                                    echo "<a href='#' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
+                                    echo "<a href='profile.php?user=". $row["id"] ."' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
                                     echo "<a data-bs-toggle='modal' data-id='". $row["id"] ."' data-bs-target='#confirmModal' class='btn btn-outline-danger btn-sm delete-user'><i class='bi bi-trash-fill'></i></a>";
                                     echo "</div>";
                                 } else if ($_SESSION["id"] == $row["id"]) {
                                     echo "<div class='btn-group'>";
-                                    echo "<a href='#' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
+                                    echo "<a href='profile.php?user=". $row["id"] ."' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
                                     echo "</div>";
                                 }
                                 echo "</td>";

@@ -38,18 +38,18 @@ function userExists($conn, $options) {
  * In which case we know the organisations does not yet exist.
  *
  * @param $conn
- * @param $name
+ * @param $options
  * @return array|false|string[]|void
  */
-function orgExists($conn, $name) {
-    $sql = "SELECT * FROM organisations WHERE name = ?;";
+function orgExists($conn, $options) {
+    $sql = "SELECT * FROM organisations WHERE name = ? OR id = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../index.php");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $name);
+    mysqli_stmt_bind_param($stmt, "ss", $options["name"], $options["id"]);
     mysqli_stmt_execute($stmt);
     // Returns data from database
     $resultData = mysqli_stmt_get_result($stmt);

@@ -13,7 +13,7 @@
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li>
-                            <a class="dropdown-item" href="../profile.php">
+                            <a class="dropdown-item" href="../profile.php?user=<?php echo $_SESSION["id"]; ?>">
                                 <div class="d-flex align-items-center">
                                     <img src="img/profilepicture.png" alt="Profile picture" class="rounded-circle" width="54" height="54">
                                     <div class="ms-3">
@@ -25,7 +25,7 @@
                         </li>
                         <li><hr class="dropdown-divider"></li>
                         <li>
-                            <a class="dropdown-item" href="../profile.php">
+                            <a class="dropdown-item" href="../profile.php?user=<?php echo $_SESSION["id"]; ?>">
                                 <div class="d-flex align-items-center">
                                     <div class=""><i class="bi bi-person-fill"></i></div>
                                     <div class="ms-3"><span>Profile</span></div>
