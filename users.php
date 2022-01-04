@@ -46,6 +46,9 @@ if ($_SESSION["role"] == "user") {
                                     echo "</th>";
                                 }
                                 ?>
+                                <th>
+                                    Actions
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -64,12 +67,40 @@ if ($_SESSION["role"] == "user") {
                                     echo $data;
                                     echo "</td>";
                                 }
+                                echo "<td>";
+
+                                if ($_SESSION["id"] != $row["id"]) {
+                                    echo "<div class='btn-group'>";
+                                    echo "<a href='#' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
+                                    echo "<a data-bs-toggle='modal' data-id='". $row["id"] ."' data-bs-target='#confirmModal' class='btn btn-outline-danger btn-sm delete-user'><i class='bi bi-trash-fill'></i></a>";
+                                    echo "</div>";
+                                } else if ($_SESSION["id"] == $row["id"]) {
+                                    echo "<div class='btn-group'>";
+                                    echo "<a href='#' class='btn btn-outline-primary btn-sm'><i class='bi bi-pencil-square'></i></a>";
+                                    echo "</div>";
+                                }
+                                echo "</td>";
                                 echo "</tr>";
                             }
                             mysqli_close($conn);
                             ?>
                         </tbody>
                     </table>
+                </div>
+            </div>
+            <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModal" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Delete confirmation</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">Are you sure you want to delete this user, all data will be lost and can not be recovered.</div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <a href="" id="delete-project" class="btn btn-danger">Delete User</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -91,8 +122,17 @@ if ($_SESSION["role"] == "user") {
 
 <script>
     $(document).ready(function() {
-        $('#usersTable').DataTable();
+        $('#usersTable').DataTable({
+            "scrollX": true
+        });
     } );
+</script>
+
+<script>
+    $(document).on("click", ".delete-user", function () {
+        var userID = $(this).data('id');
+        $(".modal-footer #delete-project").attr("href", "includes/delete_user.php?user="+userID);
+    });
 </script>
 
 </body>

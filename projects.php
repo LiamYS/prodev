@@ -68,7 +68,9 @@
                             echo "<td>";
                             echo "<div class='btn-group'>";
                             echo '<a href="project.php?project='. $row["id"] .'" class="btn btn-outline-primary btn-sm"><i class="bi bi-box-arrow-up-left"></i></a>';
-                            echo "<a data-bs-toggle='modal' data-id='". $row["id"] ."' data-bs-target='#confirmModal' class='btn btn-outline-danger btn-sm delete-project'><i class='bi bi-trash-fill'></i></a>";
+                            if ($_SESSION["role"] == "superadmin" || $_SESSION["role"] == "admin") {
+                                echo "<a data-bs-toggle='modal' data-id='". $row["id"] ."' data-bs-target='#confirmModal' class='btn btn-outline-danger btn-sm delete-project'><i class='bi bi-trash-fill'></i></a>";
+                            }
                             echo "</div>";
                             echo"</td>";
                             echo "</tr>";
@@ -123,8 +125,7 @@
 <script>
     $(document).on("click", ".delete-project", function () {
         var myBookId = $(this).data('id');
-        console.log(myBookId);
-        $(".modal-footer #delete-project").attr("href", "includes/delete_proj.php?project="+myBookId);
+        $(".modal-footer #delete-user").attr("href", "includes/delete_proj.php?project="+myBookId);
     });
 </script>
 

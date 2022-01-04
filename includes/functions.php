@@ -6,18 +6,19 @@
  * In which case we know the user does not yet exist.
  *
  * @param $conn
- * @param $email
+ * @param $options
  * @return array|false|string[]|void
  */
-function userExists($conn, $email) {
-    $sql = "SELECT * FROM users WHERE email = ?;";
+// TODO: Check if changed functions impacts functionalities on website
+function userExists($conn, $options) {
+    $sql = "SELECT * FROM users WHERE email = ? OR id = ?;";
     $stmt = mysqli_stmt_init($conn);
     if (!mysqli_stmt_prepare($stmt, $sql)) {
         header("location: ../index.php");
         exit();
     }
 
-    mysqli_stmt_bind_param($stmt, "s", $email);
+    mysqli_stmt_bind_param($stmt, "ss", $options["email"], $options["id"]);
     mysqli_stmt_execute($stmt);
     // Returns data from database
     $resultData = mysqli_stmt_get_result($stmt);

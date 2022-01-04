@@ -110,7 +110,7 @@ $imgURL = "uploads/".$project['reference'];
                 <div class="card radius-10 w-100">
                     <div class="card-body">
                         <div class="d-flex align-items-center">
-                            <h6 class="mb-0">By Device</h6>
+                            <h6 class="mb-0">Lot Map</h6>
                             <div class="fs-5 ms-auto dropdown">
                                 <div class="dropdown-toggle dropdown-toggle-nocaret cursor-pointer" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></div>
                                 <ul class="dropdown-menu">

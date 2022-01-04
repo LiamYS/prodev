@@ -18,7 +18,11 @@ if (isset($_POST['email']) && isset($_POST['password']) && isset($_POST['submit'
     require_once 'dbconnection.php';
     require_once 'functions.php';
 
-    $userExists = userExists($conn, $email);
+    $options = array(
+        'email' => $email
+    );
+
+    $userExists = userExists($conn, $options);
 
     if ($userExists === false) {
         header("location: ../index.php?error=no_user");
